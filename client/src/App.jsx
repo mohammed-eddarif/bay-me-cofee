@@ -3,6 +3,7 @@ import './App.css';
 import { useEffect,useState } from 'react';
 import abi from './contractJson/chai.json';
 import Buy from './components/Buy';
+import chai from "./chai.png";
 import Memos from './components/Memos';
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
 
   useEffect(()=>{
     const template =async ()=>{
-      const contractAddress = "0x76aCbDbF31Be28912c4c55C60d4a13d2715f1929";
+      const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
       const contractABI = abi.abi;
      try{
       const {ethereum} = window;
@@ -52,11 +53,16 @@ function App() {
 
   return (
     <div>
-      connected account : {account}
-     <Buy state={state}/> 
-     <Memos/>
+      <img src={chai} className="img-fluid" alt=".." width="100%" />
+      <p style={{ marginTop: "10px", marginLeft: "5px" }}>
+        <small>Connected Account - {account}</small>
+      </p>
+
+      <Buy state={state} />
+      {/*       <Memos state={state} />
+       */}
     </div>
-  )
+  );
 }
 
 export default App
