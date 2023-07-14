@@ -24,25 +24,25 @@ const Buy = ({ state }) => {
 
   return (
     <div>
-      <form class="form" onSubmit={handleSubmit(onSubmit)}>
-        <div class="form-column">
-          <label for="name">Name:</label>
+      <form className="form" onSubmit={handleSubmit(onSubmit)}>
+        <div className="htmlForm-column">
+          <label htmlFor="name">Name:</label>
           <input {...register("name", { required: true })} />
           <br />
           {errors.name && <span>This field is required</span>}
           <br />
         </div>
 
-        <div class="form-column">
-          <label for="message">Message:</label>
+        <div className="form-column">
+          <label htmlFor="message">Message:</label>
           <input {...register("message", { required: true })} />
           <br />
           {errors.message && <span>This field is required</span>}
           <br />
         </div>
 
-        <div class="form-column">
-          <label for="amount">Amount:</label>
+        <div className="form-column">
+          <label htmlFor="amount">Amount:</label>
           <input {...register("amount", { required: true })} />
           <br />
           {errors.amount && <span>This field is required</span>}

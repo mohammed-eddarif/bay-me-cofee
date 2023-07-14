@@ -7,18 +7,19 @@ const Memos = ({ state }) => {
     const memosMessage = async () => {
       const memos = await contract.getMemos();
       setMemos(memos);
-      //console.log(memos)
     };
     contract && memosMessage();
   }, [contract]);
+
+
   return (
     <div className="container-fluid">
       <h3 style={{ textAlign: "center", marginTop: "20px" }}>Messages</h3>
       <table>
         <tbody>
-          {memos.map((memo) => {
+          {memos.map((memo,index) => {
             return (
-              <tr>
+              <tr key={index}>
                 <td
                   style={{
                     backgroundColor: "dodgerblue",
