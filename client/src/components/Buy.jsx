@@ -14,6 +14,7 @@ const Buy = ({ state }) => {
     const { contract } = state;
     const value = { value: ethers.parseEther(amount) };
     const transaction = await contract.buyChai(name, message, value);
+    console.log(transaction);
     console.log("transaction done!");
   };
 
