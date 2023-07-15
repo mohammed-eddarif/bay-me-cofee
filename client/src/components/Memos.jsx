@@ -7,7 +7,7 @@ const Memos = ({ state }) => {
     const memosMessage = async () => {
       const memos = await contract.getMemos();
       setMemos(memos);
-      //console.log(memos)
+      console.log(memos)
     };
     contract && memosMessage();
   }, [contract]);
@@ -16,10 +16,10 @@ const Memos = ({ state }) => {
       <h3 style={{ textAlign: "center", marginTop: "20px" }}>Messages</h3>
       <table>
         <tbody>
-          {memos.map((memo) => {
+          {memos.map((memo,index) => {
             return (
               <tr>
-                <td
+                <td key={index}
                   style={{
                     backgroundColor: "dodgerblue",
                     border: "1px solid white",
@@ -44,7 +44,7 @@ const Memos = ({ state }) => {
                   {new Date(memo.timestamp * 1000).toLocaleString()}
                 </td>
                 */}
-                <td
+                <td key={index}
                   style={{
                     backgroundColor: "dodgerblue",
                     border: "1px solid white",
@@ -56,7 +56,7 @@ const Memos = ({ state }) => {
                 >
                   {memo.message}
                 </td>
-                <td
+                <td key={index}
                   className="container-fluid"
                   style={{
                     backgroundColor: "dodgerblue",

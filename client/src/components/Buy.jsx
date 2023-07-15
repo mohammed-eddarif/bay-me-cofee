@@ -24,8 +24,8 @@ const Buy = ({ state }) => {
 
   return (
     <div>
-      <form class="form" onSubmit={handleSubmit(onSubmit)}>
-        <div class="form-column">
+      <form className="form" onSubmit={handleSubmit(onSubmit)}>
+        <div className="form-column">
           <label for="name">Name:</label>
           <input {...register("name", { required: true })} />
           <br />
@@ -33,7 +33,7 @@ const Buy = ({ state }) => {
           <br />
         </div>
 
-        <div class="form-column">
+        <div className="form-column">
           <label for="message">Message:</label>
           <input {...register("message", { required: true })} />
           <br />
@@ -41,7 +41,7 @@ const Buy = ({ state }) => {
           <br />
         </div>
 
-        <div class="form-column">
+        <div className="form-column">
           <label for="amount">Amount:</label>
           <input {...register("amount", { required: true })} />
           <br />
