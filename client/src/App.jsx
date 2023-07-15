@@ -1,7 +1,7 @@
 import {ethers} from 'ethers';
 import './App.css';
 import { useEffect,useState } from 'react';
-import abi from './contractJson/chai.json';
+import abi from './contractJson/contracts/chai.sol/chai.json';
 import Buy from './components/Buy';
 import chai from "./chai.png";
 import Memos from './components/Memos';

@@ -14,6 +14,7 @@ const Buy = ({ state }) => {
     const { contract } = state;
     const value = { value: ethers.parseEther(amount) };
     const transaction = await contract.buyChai(name, message, value);
+    console.log(transaction);
     console.log("transaction done!");
   };
 
@@ -25,8 +26,8 @@ const Buy = ({ state }) => {
   return (
     <div>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-column">
-          <label for="name">Name:</label>
+        <div className="htmlForm-column">
+          <label htmlFor="name">Name:</label>
           <input {...register("name", { required: true })} />
           <br />
           {errors.name && <span>This field is required</span>}
@@ -34,7 +35,7 @@ const Buy = ({ state }) => {
         </div>
 
         <div className="form-column">
-          <label for="message">Message:</label>
+          <label htmlFor="message">Message:</label>
           <input {...register("message", { required: true })} />
           <br />
           {errors.message && <span>This field is required</span>}
@@ -42,7 +43,7 @@ const Buy = ({ state }) => {
         </div>
 
         <div className="form-column">
-          <label for="amount">Amount:</label>
+          <label htmlFor="amount">Amount:</label>
           <input {...register("amount", { required: true })} />
           <br />
           {errors.amount && <span>This field is required</span>}

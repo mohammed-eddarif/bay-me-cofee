@@ -7,10 +7,12 @@ const Memos = ({ state }) => {
     const memosMessage = async () => {
       const memos = await contract.getMemos();
       setMemos(memos);
-      console.log(memos)
+      console.log(memos);
     };
     contract && memosMessage();
   }, [contract]);
+
+
   return (
     <div className="container-fluid">
       <h3 style={{ textAlign: "center", marginTop: "20px" }}>Messages</h3>
@@ -18,8 +20,8 @@ const Memos = ({ state }) => {
         <tbody>
           {memos.map((memo,index) => {
             return (
-              <tr>
-                <td key={index}
+              <tr key={index}>
+                <td
                   style={{
                     backgroundColor: "dodgerblue",
                     border: "1px solid white",

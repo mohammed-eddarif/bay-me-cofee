@@ -15,7 +15,6 @@ async function main() {
   await chai.waitForDeployment();
 
   const address = await chai.getAddress();
-  
   console.log(
     `Deployed contract address : ${address.toString()}`
   );
